@@ -1,4 +1,4 @@
-# tranquil
+# tranquil [![Build Status](https://travis-ci.org/codaga/tranquil.svg?branch=master)](https://travis-ci.org/codaga/tranquil)
 Webapp for better mental health management
 
 ## Setting up
