@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "9"
+dist: trusty
+sudo: required
+cache:
+  directories:
+    - "node_modules"
+branches:
+  only:
+  - master
+  - devel
+before_script:
+  - npm install -g @angular/cli
+script:
+- ng lint
+- ng test
+- ng build --prod --base-href /
