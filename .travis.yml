@@ -1,18 +1,25 @@
 language: node_js
 node_js:
-  - "9"
+  - "10"
 dist: trusty
 sudo: required
+
 cache:
   directories:
     - "node_modules"
+
 branches:
   only:
   - master
   - devel
 before_script:
   - npm install -g @angular/cli
+
+addons:
+  chrome: stable
+
 script:
-- ng lint
-- ng test
+- npm run lint
+- npm run test:headless
 - ng build --prod --base-href /
+- xvfb-run npm run e2e

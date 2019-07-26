@@ -5,6 +5,7 @@
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot --prod",
@@ -49,7 +50,7 @@
     "typescript": "~3.4.5"
   },
   "engines": {
-    "node": "6.11.1",
-    "npm": "3.10.9"
+    "node": "10.15.0",
+    "npm": "6.10.1"
   }
 }
