@@ -5,7 +5,6 @@
     "ng": "ng",
     "build": "ng build",
     "test": "jest",
-    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot --prod",
