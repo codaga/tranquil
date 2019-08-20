@@ -10,7 +10,9 @@
     "postinstall": "ng build --aot --prod",
     "drive": "npm run postinstall && npm run start",
     "start": "node server.js",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "tailwind": "./node_modules/.bin/tailwind build ./src/tailwind.css -c ./tailwind-config.js -o ./src/styles.css",
+    "prestart": "npm run tailwind"
   },
   "private": true,
   "dependencies": {
