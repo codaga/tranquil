@@ -1,7 +1,7 @@
 <nav class="bg-black p-3 fixed w-full z-10 pin-t">
   <div class="flex items-center justify-between flex-wrap container mx-auto px-20">
     <div class="flex flex-no-shrink text-white">
-      <a class="text-white no-underline hover:text-white hover:no-underline" href="#">
+      <a class="text-white no-underline hover:text-white hover:no-underline" [routerLink]="['/home']">
         <span class="text-2xl pl-2"><i class="em em-grinning"></i> Tranquil</span>
       </a>
     </div>
@@ -18,7 +18,7 @@
     <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-4 lg:pt-0" id="nav-content">
       <ul class="list-reset lg:flex justify-end flex-1 items-center">
         <li class="mr-3">
-          <a class="inline-block py-2 px-4 text-white no-underline" href="#">Active</a>
+          <a class="inline-block py-2 px-4 text-white no-underline" routerLink="/specialists">Specialists</a>
         </li>
         <li class="mr-3">
           <a class="inline-block text-white no-underline hover:text-white hover:text-underline py-2 px-4" href="#">link</a>
