@@ -5,7 +5,7 @@ export class Specialist {
     address: {
         street: string;
         city: string;
-        country: string; 
+        country: string;
         zipcode: string;
         };
     phone: string;

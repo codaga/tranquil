@@ -15,11 +15,12 @@ export class SpecialistDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private specialistsService: SpecialistsService) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.params['id'];
+    const idRef = 'id';
+    const id = +this.route.snapshot.params[idRef];
     this.specialist = this.specialistsService.getSpecialistById(id);
     this.route.params.subscribe(params => {
-      this.specialist = this.specialistsService.getSpecialistById(+params['id']);
-    })
+      this.specialist = this.specialistsService.getSpecialistById(+params[idRef]);
+    });
   }
 
 }

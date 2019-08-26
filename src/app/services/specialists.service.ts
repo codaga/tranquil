@@ -11,11 +11,11 @@ export class SpecialistsService {
   constructor() { }
 
 
-  getSpecialists(){
+  getSpecialists() {
     return this.specialists;
   }
 
-  getSpecialistById(id: number){
-    return this.specialists.find(s => s.id === id)
+  getSpecialistById(id: number) {
+    return this.specialists.find(s => s.id === id);
   }
 }
