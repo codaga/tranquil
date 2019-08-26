@@ -1,0 +1,26 @@
+<div class="mt-4">
+    <div class="card" *ngIf="specialist">
+      <h3 class="card-header">
+        <strong>{{specialist.name}}</strong>
+      </h3>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#">
+              <img src="{{specialist.avatarUrl}}" class="img-thumbnail github-avatar">
+            </a>
+          </div>
+          <div class="col-md-8">
+            <div class="list-group mt-3">
+              <div class="list-group-item"><strong>Address: </strong>{{specialist.address.street}} , {{specialist.address.city}} , {{specialist.address.country}}</div>
+              <div class="list-group-item"><strong>Phone: </strong>{{specialist.phone}}</div>
+              <div class="list-group-item"><strong>Email: </strong>{{specialist.email}}</div>
+              <div class="list-group-item"><strong>Specialty: </strong>{{specialist.specialty}}</div>
+
+              <div class="list-group-item"><strong>Gender: </strong>{{specialist.gender}}</div>
+              <div class="list-group-item"><strong>Active: </strong>{{specialist.isActive}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
