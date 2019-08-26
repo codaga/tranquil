@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "10"
+dist: trusty
+sudo: required
+
+cache:
+  directories:
+    - "node_modules"
+
+branches:
+  only:
+  - master
+  - devel
+before_script:
+  - npm install -g @angular/cli
+
+addons:
+  chrome: stable
+
+script:
+- npm run lint
+- npm run test
+- ng build --prod --base-href /
+- xvfb-run npm run e2e
