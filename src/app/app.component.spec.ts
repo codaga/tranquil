@@ -1,4 +1,8 @@
+import { Location, APP_BASE_HREF } from '@angular/common';
 import { TestBed, async } from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
+import {Router} from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { MockComponent } from 'ng-mocks';
 import { NavComponent } from './nav/nav.component';
@@ -6,7 +10,14 @@ import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
 
 describe('AppComponent', () => {
+
+  let router: Router;
+
   beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule.withRoutes([])],
+    });
+
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
@@ -14,7 +25,13 @@ describe('AppComponent', () => {
         MockComponent(SearchComponent),
         MockComponent(FooterComponent),
       ],
+      providers: [{provide: APP_BASE_HREF, useValue: '/my/app'}]
     }).compileComponents();
+
+    router = TestBed.get(Router);
+    location = TestBed.get(Location);
+    router.initialNavigation();
+
   }));
 
   it('should create the app', () => {
