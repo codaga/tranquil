@@ -12,6 +12,7 @@ export class SpecialistsComponent implements OnInit {
   constructor(private specialistService: SpecialistsService) { }
 
   specialists: Specialist[];
+  searchText;
 
   ngOnInit() {
     this.specialists = this.specialistService.getSpecialists();
