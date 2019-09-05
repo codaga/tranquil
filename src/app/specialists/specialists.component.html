@@ -1,4 +1,5 @@
-<input type="text" class="form-control" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+<!-- <input type="text" class="form-control" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search"> -->
+<app-search [(searchModel)]="searchText"></app-search>
 
 <div *ngFor="let specialist of specialists | filter: searchText">
     <div class="card mb-3">
