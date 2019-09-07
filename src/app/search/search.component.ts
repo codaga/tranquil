@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { SpecialistsService } from './../services/specialists.service';
+import { Specialist } from './../models/specialist.model';
 
 @Component({
   selector: 'app-search',
@@ -6,16 +8,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./search.component.sass']
 })
 export class SearchComponent implements OnInit {
-  @Input() searchModel: string;
-  @Output() searchModelChange: EventEmitter<any> = new EventEmitter();
+  specialists: Specialist[];
+  searchText: string;
 
-  constructor() { }
+  constructor(private specialistService: SpecialistsService) { }
 
   ngOnInit() {
   }
 
-  updateSearchModel(value) {
-    this.searchModel = value;
-    this.searchModelChange.emit(this.searchModel);
+  nameSearch(searchText: string) {
+    this.specialists = this.specialistService.getSpecialistByName(searchText);
   }
+
 }
