@@ -2,6 +2,8 @@ import { SpecialistsService } from './services/specialists.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
@@ -15,6 +17,7 @@ import { NavComponent } from './nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
+    FilterPipe,
     NavComponent,
     SearchComponent,
     FooterComponent,
@@ -25,7 +28,8 @@ import { NavComponent } from './nav/nav.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [SpecialistsService],
   bootstrap: [AppComponent]
